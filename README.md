@@ -43,10 +43,9 @@ pip install -r requirements.txt
 PayloadGen/
 │
 ├── finalcode.py         # Main script
-├── data/
-│   ├── xss.json         # Encoded XSS payloads
-│   ├── sqli.json        # Encoded SQLi payloads
-│   └── cmd_payloads.py  # CMD payloads (Linux/Windows)
+│── xss.json         # Encoded XSS payloads
+│── sqli.json        # Encoded SQLi payloads
+│── cmd.json  # CMD payloads (Linux/Windows)
 ```
 
 ---
