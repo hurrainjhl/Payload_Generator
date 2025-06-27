@@ -110,13 +110,18 @@ This project is licensed under the [MIT License](LICENSE).
 
 ---
 
-## Contributors
+##  Contributors
 
-* **Hoorulain** (Hoso_punk) — Lead Developer
-* **Abdul Haseeb** — Payload Research
-* **M Umar Farooq** — Testing & QA
+See [CONTRIBUTORS.md](CONTRIBUTORS.md)
 
 ---
+## Acknowledgements
+
+* Inspired by: PayloadAllTheThings, SecLists, HackTricks  
+* Thanks to: ITSOLERA Cyber Internship (2025) for guidance and mentorship  
+* Special mention: Burp Suite and OWASP ZAP integrations for enabling automated testing  
+* Built with: Python, Requests, Pyperclip, OWASP ZAP API, Burp Suite Pro API
+
 
 ##  Disclaimer
 
